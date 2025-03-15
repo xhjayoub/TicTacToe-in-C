@@ -34,6 +34,29 @@ void getPlayerInput(int b[3][3], int player)
 	b[x-1][y-1] = player;
 }
 
+int checkLineWinner(int b[3][3], int l)
+{
+	if (b[l][0] == b[l][1] && b[l][1] == b[l][2] && (b[l][0] == 1 || b[l][0] == 2))
+		return b[l][0];
+	return 0;
+}
+int checkColonWinner(int b[3][3], int c)
+{
+	if (b[0][c] == b[1][c] && b[1][c] == b[2][c] && (b[0][c] == 1 || b[0][c] == 2))
+		return b[0][c];
+	return 0;
+}
+int checkDiagoWinner(int b[3][3])
+{
+	// Check first Diagonal
+	if ((b[0][0] == 1 || b[0][0] == 2) && (b[0][0] == b[1][1] && b[1][1] == b[2][2]))
+		return b[0][0];
+	else if ((b[0][2] == 1 || b[0][2] == 2) && (b[0][2] == b[1][1] && b[1][1] == b[2][0]))
+		return b[0][2];
+	else
+		return 0;
+}
+
 
 int main()
 {
@@ -54,6 +77,7 @@ int main()
 		else
 			player = 1;
 
+		printf("Winner is %d\n", checkDiagoWinner(board));
 		// Check for winner after x turns
 		i++;
 	}
