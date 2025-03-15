@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void print_board(int b[3][3])
 {
@@ -97,6 +98,7 @@ int main()
 	int i = 0;
 	
 	while (i<9) {
+		system("clear");
 		print_board(board);
 		printf("\n\n");
 		printf("Player %d turn :\n", player);
@@ -116,7 +118,7 @@ int main()
 		// Check for winner after x turns
 		i++;
 	}
-
+	system("clear");
 	print_board(board);
 	displayWinner(winner);
 	return 0;
