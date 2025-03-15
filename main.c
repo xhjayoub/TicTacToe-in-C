@@ -77,6 +77,17 @@ int checkWinner(int b[3][3])
 	return checkDiagoWinner(b);
 }
 
+void displayWinner(int n) 
+{
+	printf("\n");
+	if (n == 1)
+		printf("X wins !\n");
+	else if (n == 2)
+		printf("O wins !\n");
+	else
+		printf("Draw\n");
+}
+
 int main()
 {
 	printf("TicTacToe !\n");
@@ -87,7 +98,7 @@ int main()
 	
 	while (i<9) {
 		print_board(board);
-		printf("\n");
+		printf("\n\n");
 		printf("Player %d turn :\n", player);
 		getPlayerInput(board, player);
 		printf("\n");
@@ -98,14 +109,15 @@ int main()
 			player = 1;
 
 
-		if (i>4)
+		if (i>3)
 			winner = checkWinner(board);
 		if (winner != 0)
 			break;
 		// Check for winner after x turns
 		i++;
 	}
-	printf("Winner is %d\n", winner);
 
+	print_board(board);
+	displayWinner(winner);
 	return 0;
 }
