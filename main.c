@@ -30,7 +30,7 @@ void getPlayerInput(int b[3][3], int player)
 	do {
 		getInt("Line", &x, 1, 3);
 		getInt("Colon", &y, 1, 3);
-	} while (b[x][y] == 1 || b[x][y] == 2);
+	} while (b[x-1][y-1] == 1 || b[x-1][y-1] == 2);
 	b[x-1][y-1] = player;
 }
 
@@ -42,6 +42,10 @@ int main()
 	int board[3][3];
 	print_board(board);
 	getPlayerInput(board, 1);
+	getPlayerInput(board, 2);
+	getPlayerInput(board, 1);
+	getPlayerInput(board, 2);
+	getPlayerInput(board, 2);
 	print_board(board);
 
 	return 0;
