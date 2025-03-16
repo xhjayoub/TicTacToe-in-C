@@ -118,7 +118,6 @@ int main()
 			winner = checkWinner(board);
 		if (winner != 0)
 			break;
-		// Check for winner after x turns
 		i++;
 	}
 	system("clear");
