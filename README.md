@@ -1,5 +1,6 @@
 # TicTacToe-in-C
 This is a tictactoe game made in c.
+<br>
 ![screenshot](img/tictactoe1.png) 
 ## How to play
 Clone the project.
