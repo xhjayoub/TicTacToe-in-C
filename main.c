@@ -46,7 +46,7 @@ int checkLineWinner(int b[3][3], int l)
 }
 int checkColonWinner(int b[3][3], int c)
 {
-	if (b[0][c] == b[1][c] && b[1][c] == b[2][c] && (b[0][c] == O || b[0][c] == O))
+	if (b[0][c] == b[1][c] && b[1][c] == b[2][c] && (b[0][c] == X || b[0][c] == O))
 		return b[0][c];
 	return 0;
 }
